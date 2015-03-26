@@ -1,4 +1,4 @@
 # feedme
 Find a food truck, fast!
 
-I'll write some stuff here... eventually
+First time using Python and Django (:
