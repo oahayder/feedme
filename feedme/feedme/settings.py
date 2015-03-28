@@ -50,6 +50,10 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+REST_FRAMEWORK = {
+    #'EXCEPTION_HANDLER': 'feedme.proximitysearch.utils.exception_handler'
+}
+
 ROOT_URLCONF = 'feedme.urls'
 
 WSGI_APPLICATION = 'feedme.wsgi.application'

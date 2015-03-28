@@ -14,13 +14,13 @@ from proximitysearch.models import FoodFinderInfo
 # We will run this script nightly to update our DB
 
 # Grab JSON via gov API
+# TODO get this from conf
 response = urllib2.urlopen('https://data.sfgov.org/resource/rqzj-sfat.json')
 
 data = json.load(response)
 
-# Validate data
+# TODO Validate data
 
-# Iterate over JSON elements
 for food_facility in data:
 
     # Required params
@@ -31,6 +31,7 @@ for food_facility in data:
         permitId = food_facility['permit']
         name = food_facility['applicant']
         address = food_facility['address']
+        status = food_facility['status']
         schedule = food_facility['schedule']
     except KeyError:
         continue
@@ -49,6 +50,7 @@ for food_facility in data:
         description = fooditems,
         longitude = longitude,
         latitude = latitude,
+        status = status,
         scheduleLink = schedule)
 
     new_facility.save()
