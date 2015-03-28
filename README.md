@@ -11,9 +11,9 @@ First time using Django (: Shaking the rust off of my beginner Python skills
 # Problem & Solution
 The problem was to create a service that tells the user what types of food trucks might be found near a specific location on a map. I am primarily a backend engineer, interested in a backend position, so I planned to build an API that returns the nearest food truck(s) from a set of coordinates.
 
-The first step to solving this was understanding the data. With only a weeks exposure to the Data SF API I didn't have time to study it's behaviours which meant I had to make some assumptions:
+The first step to solving this was understanding the data. With only one week of exposure to the Data SF API I didn't have time to study it's behaviours which meant I had to make some assumptions:
 
-1. The listings and status of food trucks could change multiple times per week.
+1. The listings and status of food trucks could change at any given time at an unpredictable rate (Assumed to change on average once per day)
 2. The API could be unreachable at any time for a prolonged period of time
 3. The API could periodically have incorrect data
 
