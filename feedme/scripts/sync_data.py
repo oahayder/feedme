@@ -1,8 +1,15 @@
+__author__ = 'oahayder'
+
 import urllib2
 import json
-from facility.models import FacilityInfo
+import os, sys
+import django
 
-__author__ = 'oahayder'
+sys.path.append(os.path.join(os.path.dirname(__file__), '../'))
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "feedme.settings")
+django.setup()
+
+from proximitysearch.models import FoodFinderInfo
 
 # We will run this script nightly to update our DB
 
@@ -15,17 +22,28 @@ data = json.load(response)
 
 # Iterate over JSON elements
 for food_facility in data:
-    id = food_facility['permit']
-    name = food_facility['applicant']
-    address = food_facility['address']
-    fooditems = food_facility['fooditems']
-    schedule = food_facility['schedule']
-    latitude = food_facility['location']['latitude']
-    longitude = food_facility['location']['longitude']
 
-    # Update items with same permit in DB
-    new_facility = FacilityInfo(
-        id = id,
+    # Required params
+    try:
+        # TODO is this correct or is it the coords under location?
+        latitude = food_facility['latitude']
+        longitude = food_facility['longitude']
+        permitId = food_facility['permit']
+        name = food_facility['applicant']
+        address = food_facility['address']
+        schedule = food_facility['schedule']
+    except KeyError:
+        continue
+
+    # Nice to haves
+    try:
+        fooditems = food_facility['fooditems']
+    except KeyError:
+        fooditems = ''
+
+    # Update items
+    new_facility = FoodFinderInfo(
+        permitId = id,
         name = name,
         address = address,
         description = fooditems,

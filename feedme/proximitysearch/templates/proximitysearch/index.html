@@ -1,0 +1,9 @@
+{% if facility_list %}
+    <ul>
+    {% for facility in facility_list %}
+        <p>{{ facility }}</p>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No food nearby :'(</p>
+{% endif %}
