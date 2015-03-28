@@ -20,6 +20,7 @@ response = urllib2.urlopen('https://data.sfgov.org/resource/rqzj-sfat.json')
 data = json.load(response)
 
 # TODO Validate data
+# TODO If invalid, log and send email to admin
 
 for food_facility in data:
 
