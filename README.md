@@ -21,9 +21,10 @@ I tried to solve all these problems by building a daemon process that scrapes th
 
 # Tech choices
 Python 2.7
-Django
-redis-2.10.3
-django-redis-3.8.3
+Django (https://www.djangoproject.com/)
+Django REST framework (http://www.django-rest-framework.org/)
+redis-2.10.3 (http://redis.io/)
+django-redis-3.8.3 (http://niwibe.github.io/django-redis/)
 
 I have novice experience with Python I got from University. It's been a few years since I used it. I chose to use Python since I know that Uber's backend stack is mostly written in Python. I wanted to show my ability to ramp up quickly.
 
