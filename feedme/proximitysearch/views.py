@@ -21,7 +21,7 @@ class FoodFinderList(APIView):
             # TODO Log error
             # TODO try and use the users previously requested location
             # TODO Use custom exception
-            return Response("Invalid regLong and/or reqLat params", status=status.HTTP_400_BAD_REQUEST)
+            return Response("Invalid longitude and/or latitude params", status=status.HTTP_400_BAD_REQUEST)
 
         try:
             count = int(request.GET.get('count'))
@@ -32,6 +32,9 @@ class FoodFinderList(APIView):
         # TODO Get this max qeury count from conf
         if (count>20):
             count=20
+
+        if (longitude>180 or longitude<-180 or latitude>90 or latitude<-90):
+            return Response("Out of range longitude and/or latitude params", status=status.HTTP_400_BAD_REQUEST)
 
         longitude -= longitude % (0.0001)
         latitude -= latitude % (0.0001)

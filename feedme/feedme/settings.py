@@ -24,8 +24,6 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-
-
 # Application definition
 
 INSTALLED_APPS = (
@@ -58,21 +56,10 @@ ROOT_URLCONF = 'feedme.urls'
 WSGI_APPLICATION = 'feedme.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 
 TIME_ZONE = 'UTC'
 
@@ -84,7 +71,7 @@ USE_TZ = True
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
-DATABASES = {'default': dj_database_url.parse('sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3'),)}
+DATABASES = {'default': dj_database_url.parse('postgres://postgres:Cherry64$@localhost:5432/postgres')}
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
