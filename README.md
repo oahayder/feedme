@@ -1,13 +1,12 @@
 # FEEDME
 Find a food truck, fast!
 
-Try it here!
-<url_to_app>
+[Try it here!](https://arcane-beach-1328.herokuapp.com/proximitysearch/nearby/37.794656/-122.424326?count=10&format=json)
 
-Author: Omar Al-hayderi (https://www.linkedin.com/in/oahayder)
+Author: Omar Al-Hayderi (https://www.linkedin.com/in/oahayder)
 
 # Problem & Solution
-The problem was to create a service that tells the user what types of food trucks might be found near a specific location on a map. I am primarily a backend engineer, interested in a backend position, so I planned to build an API that returns the nearest food truck(s) from a set of coordinates.
+The problem was to create a service that returns what types of food trucks might be found near a specific location on a map. I am primarily a backend engineer, interested in a backend position, so I planned to build an API that returns the nearest food truck(s) from a set of coordinates.
 
 The first step to solving this was understanding the data. With only one week of exposure to the Data SF API I didn't have time to study it's behaviours which meant I had to make some assumptions:
 
