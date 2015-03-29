@@ -3,7 +3,7 @@ Find a food truck, fast!
 
 [Try it here!](https://arcane-beach-1328.herokuapp.com/proximitysearch/nearby/37.794656/-122.424326?count=10&format=json)
 
-Author: Omar Al-hayderi (https://www.linkedin.com/in/oahayder)
+Author: Omar Al-Hayderi (https://www.linkedin.com/in/oahayder)
 
 # Problem & Solution
 The problem was to create a service that tells the user what types of food trucks might be found near a specific location on a map. I am primarily a backend engineer, interested in a backend position, so I planned to build an API that returns the nearest food truck(s) from a set of coordinates.
