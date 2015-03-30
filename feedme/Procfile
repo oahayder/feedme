@@ -1,1 +1,2 @@
 web: gunicorn feedme.wsgi
+clock: python scripts/clock.py

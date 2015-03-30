@@ -29,10 +29,6 @@ class FoodFinderList(APIView):
             # TODO Log error
             count = 1
 
-        # TODO Get this max qeury count from conf
-        if (count>20):
-            count=20
-
         if (longitude>180 or longitude<-180 or latitude>90 or latitude<-90):
             return Response("Out of range longitude and/or latitude params", status=status.HTTP_400_BAD_REQUEST)
 
