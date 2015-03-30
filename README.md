@@ -23,20 +23,20 @@ Django (https://www.djangoproject.com/)
 
 Django REST framework (http://www.django-rest-framework.org/)
 
-redis-2.10.3 (http://redis.io/)
+Gunicorn
 
-django-redis-3.8.3 (http://niwibe.github.io/django-redis/)
+PostgreSQL
 
 I have an entry level experience with Python I got from University. It's been a few years since I've used it. I chose to use Python since I know that Uber's backend stack is mostly written in Python and wanted to exhibit my ability to ramp up quickly on a new stack.
 
 This is my first time building a python web app hence my first time using Django.
 
 # Logic, Architecture and Peformance
-The tough part of this problem is that we could get requests from users all over the world with trillions of coordinate combinations. This makes the data very hard to cache.
+The tough part of this problem is that we could get requests from users all over the world with trillions of coordinate combinations. This makes the data very hard to cache. Querying the DB and finding distances to all food trucks is expensive. 
 
-Regardless of client, we can assume there will be a margin of error between the analogous position of the user on earth, and the coordinate set passsed to the API. I used that assumption to attempt to solve the caching problem.
+If I had more time, I would like to implement a system to attempt to chache the results. Regardless of client, we can assume there will be a margin of error between the analogous position of the user on earth, and the coordinate set passsed to the API. 
 
-I pictured the earth as a grid. The cells have grid width and height of 0.0001 degrees. When we get a set of coordinates to query with I round the input to a point on the grid and retreive results. Once the results are cached if we get a request within that same grid element on earth we can return cached data.
+Picture the earth as a grid. The cells have grid width and height of X degrees. When we get a set of coordinates to query with I round the input to a point on the grid and retreive results. Once the results are cached if we get a request within that same grid element on earth we can return cached results and avoid querying the DB and running calculations on every row.
 
 # TODO
 * Store user data to be used for food truck selection popularity, storing locations and tracking activity
