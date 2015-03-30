@@ -73,6 +73,9 @@ USE_TZ = True
 import dj_database_url
 DATABASES = {'default': dj_database_url.parse('postgres://postgres:Cherry64$@localhost:5432/postgres')}
 
+# Enable Connection Pooling
+DATABASES['default']['ENGINE'] = 'django_postgrespool'
+
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
