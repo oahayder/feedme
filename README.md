@@ -43,3 +43,5 @@ I pictured the earth as a grid. The cells have grid width and height of 0.0001 d
 * Track DB activity and site traffic
 * Analyze user activity to tweak caching and data population logic
 * Develop front end
+* Leverage GeoDjango library to globalize app
+* Only repopulate data if it has changed, by hashing the source API results and comparing it to a saved value.
