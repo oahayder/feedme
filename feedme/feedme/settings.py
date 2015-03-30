@@ -71,7 +71,11 @@ USE_TZ = True
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
-DATABASES = {'default': dj_database_url.parse('postgres://postgres:Cherry64$@localhost:5432/postgres')}
+# Dev settings
+# DATABASES = {'default': dj_database_url.parse('postgres://postgres:Cherry64$@localhost:5432/postgres')}
+# Prod settings
+DATABASES = {'default': dj_database_url.parse('postgres://fqrvanqcheayod:yBuGMd7xsX1p6kNBK3YY2oOQPO@ec2-54-163-234-163.compute-1.amazonaws.com:5432/d2r028ad9qkg05')}
+
 
 # Enable Connection Pooling
 DATABASES['default']['ENGINE'] = 'django_postgrespool'
