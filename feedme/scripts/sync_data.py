@@ -9,7 +9,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '../'))
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "feedme.settings")
 django.setup()
 
-from proximitysearch.models import FoodFinderInfo
+from proximitysearch.models import FoodFacility
 
 # We will run this script nightly to update our DB
 
@@ -44,7 +44,7 @@ for food_facility in data:
         fooditems = ''
 
     # Update items
-    new_facility = FoodFinderInfo(
+    new_facility = FoodFacility(
         permitId = id,
         name = name,
         address = address,

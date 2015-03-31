@@ -1,8 +1,8 @@
-from proximitysearch.models import FoodFinderInfo
+from proximitysearch.models import FoodFacility
 
 from rest_framework import serializers
 
-class FoodFinderInfoSerializer(serializers.ModelSerializer):
+class FoodFacilitySerializer(serializers.ModelSerializer):
     class Meta:
-        model = FoodFinderInfo
+        model = FoodFacility
         fields = ('name', 'address', 'description', 'scheduleLink', 'distance')
