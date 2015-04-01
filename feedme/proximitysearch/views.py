@@ -24,5 +24,6 @@ class NearbyFoodFacilityList(APIView):
 
         sorted_proximitysearch_list = LocationController.get_nearby_food_facilities(float(longitude), float(latitude))
         serializer = FoodFacilitySerializer(sorted_proximitysearch_list[0:count], many=True)
+
         return Response(serializer.data)
 

@@ -20,9 +20,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'otnyy42$+vqng0+o@xf+bq4!=jcd_^59jee0j##pd=77x6i6uc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 # Application definition
 
@@ -71,8 +71,10 @@ USE_TZ = True
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
+
+# TODO grab these settings from environment specific conf file
 # Dev settings
-# DATABASES = {'default': dj_database_url.parse('postgres://postgres:Cherry64$@localhost:5432/postgres')}
+#DATABASES = {'default': dj_database_url.parse('postgres://postgres:Cherry64$@localhost:5432/postgres')}
 # Prod settings
 DATABASES = {'default': dj_database_url.parse('postgres://fqrvanqcheayod:yBuGMd7xsX1p6kNBK3YY2oOQPO@ec2-54-163-234-163.compute-1.amazonaws.com:5432/d2r028ad9qkg05')}
 

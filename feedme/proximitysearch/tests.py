@@ -7,10 +7,12 @@ class NearbyFoodFacilityTestCase(TestCase):
     def setUp(self):
         FoodFacility.objects.create(name = "Testco", address="1770 Pacific", description="Imaginary food stuffs", longitude="37.794656", latitude="-122.424326")
 
+    def test_response(self):
+        testco = FoodFacility.objects.get(name="Testco")
+        self.assertEqual(LocationController.get_distance_between(testco.longitude,testco.latitude,100,90), 10207.85710073846)
+
     def test_get_distances(self):
-        testco = FoodFacility.objects.get(name="lion")
-        self.assertEqual(lion.speak(), 'The lion says "roar"')
-        self.assertEqual(cat.speak(), 'The cat says "meow"')
+        self.assertEqual(LocationController.get_distance_between(100,90,100,90), 0)
 
     def test_invalid_input(self):
         self.assertEqual(LocationValidator.validate_coordinates(0,0), 1)
