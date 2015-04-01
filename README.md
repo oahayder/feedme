@@ -16,7 +16,7 @@ The first step to solving this was understanding the data. With only one week of
 2. The API could be unreachable at any time for a prolonged period of time
 3. The API could periodically have incorrect data
 
-I tried to solve all these problems by building a daemon process that scrapes the API every night and repopulates a SQL DB that's maintained in this system.
+I tried to solve all these problems by building a daemon process that scrapes the API every monday and repopulates a SQL DB that's maintained in this system. I use a stateless API to give the FE all the necessary info to display to the user.
 
 # Tech choices
 Python 2.7
@@ -29,7 +29,7 @@ PostgreSQL
 
 I have an entry level experience with Python I got from University. It's been a few years since I've used it. I chose to use Python since I know that Uber's backend stack is mostly written in Python and wanted to exhibit my ability to ramp up quickly on new technologies.
 
-This is my first time building a python web app hence my first time using Django. From what I've found Django was the most widely used web framework for scalable Python web apps. It has a lot of cool plugins and add ons that make life easy. It also ceoms with an ORM out of the box which cut down on development time which was essential for this one week project.
+This is my first time building a python web app hence my first time using Django and Heroku. From what I've found Django was the most widely used web framework for scalable Python web apps. It has a lot of cool plugins and add ons that make life easy. It also ceoms with an ORM out of the box which cut down on development time which was essential for this one week project.
 
 The Django REST framework was also very useful to out simply output the data in consumable JSON.
 
@@ -49,3 +49,4 @@ Picture the earth as a grid. The cells have grid width and height of X degrees. 
 * Leverage GeoDjango library to globalize app
 * Only run the sync_data.pl repopulation script if it has changed, by hashing the source API results and comparing it to a saved value.
 * Leverage REDIS for results cacheing.
+* Parse schedule file to only return food trucks that are currently open
