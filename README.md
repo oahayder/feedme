@@ -1,7 +1,9 @@
 # FEEDME
 Find a food truck, fast!
 
-[Try it here!](https://arcane-beach-1328.herokuapp.com/proximitysearch/nearby/37.794656/-122.424326?count=10&format=json)
+[API Docs](https://arcane-beach-1328.herokuapp.com/proximitysearch/api-docs)
+
+[Closest 10 spots in JSON form? Try it here!](https://arcane-beach-1328.herokuapp.com/proximitysearch/nearby/37.794656/-122.424326?count=10&format=json)
 
 Author: Omar Al-Hayderi (https://www.linkedin.com/in/oahayder)
 
