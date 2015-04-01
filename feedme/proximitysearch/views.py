@@ -9,6 +9,7 @@ from rest_framework import status
 class NearbyFoodFacilityList(APIView):
     """
     https://github.com/oahayder/feedme
+
     """
     def get(self, request, longitude, latitude):
 
