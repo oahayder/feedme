@@ -27,16 +27,16 @@ Django REST framework (http://www.django-rest-framework.org/)
 
 PostgreSQL
 
-I have an entry level experience with Python I got from University. It's been a few years since I've used it. I chose to use Python since I know that Uber's backend stack is mostly written in Python and wanted to exhibit my ability to ramp up quickly on a new stack.
+I have an entry level experience with Python I got from University. It's been a few years since I've used it. I chose to use Python since I know that Uber's backend stack is mostly written in Python and wanted to exhibit my ability to ramp up quickly on new technologies.
 
-This is my first time building a python web app hence my first time using Django. From what I've found Django was the most widely used web framework for Python. It makes it very simple to quickly spin up a scalable web application.
+This is my first time building a python web app hence my first time using Django. From what I've found Django was the most widely used web framework for scalable Python web apps. It has a lot of cool plugins and add ons that make life easy. It also ceoms with an ORM out of the box which cut down on development time which was essential for this one week project.
 
 The Django REST framework was also very useful to out simply output the data in consumable JSON.
 
 # Logic, Architecture and Peformance
 The tough part of this problem is that we could get requests from users all over the world with trillions of coordinate combinations. This makes the data very hard to cache. Querying the DB and finding distances to all food trucks is expensive. 
 
-If I had more time, I would like to implement a system to attempt to chache the results. Regardless of client, we can assume there will be a margin of error between the analogous position of the user on earth, and the coordinate set passsed to the API. 
+If I had more time, I would like to implement a system to attempt to chache the sorted results. Regardless of client, we can assume there will be a margin of error between the analogous position of the user on earth, and the coordinate set passsed to the API. 
 
 Picture the earth as a grid. The cells have grid width and height of X degrees. When we get a set of coordinates to query with I round the input to a point on the grid and retreive results. Once the results are cached if we get a request within that same grid element on earth we can return cached results and avoid querying the DB and running calculations on every row.
 
