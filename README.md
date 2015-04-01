@@ -3,8 +3,6 @@ Find a food truck, fast!
 
 [Try it here!](https://arcane-beach-1328.herokuapp.com/proximitysearch/nearby/37.794656/-122.424326?count=10&format=json)
 
-[API Docs](https://arcane-beach-1328.herokuapp.com/proximitysearch/docs)
-
 Author: Omar Al-Hayderi (https://www.linkedin.com/in/oahayder)
 
 # Problem & Solution
